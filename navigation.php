@@ -11,8 +11,10 @@ return [
             'Jobs'          => 'docs/foundation/jobs',
             'Domains'       => 'docs/foundation/domains',
             'Operations'    => 'docs/foundation/operations',
+            'Resources'     => 'docs/foundation/resources',
             'Views'         => 'docs/foundation/views',
             'Events'        => 'docs/foundation/events',
+            'Logging'       => 'docs/foundation/logging',
             'Instance'      => 'docs/foundation/instance'
         ],
     ],

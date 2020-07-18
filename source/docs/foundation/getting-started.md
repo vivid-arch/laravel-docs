@@ -58,14 +58,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 2. MINOR version when functionality is added in a backwards compatible manner
 3. PATCH version when backwards compatible bug fixes are made
 
-All Vivid packages will have the same version number.
-
-### Differences with Lucid
-
-+ Vivid ditched the scaffold. You can just pull the foundation-laravel and you are ready to go.
-+ Vivid files are now inside the /app directory instead of the /src.
-+ Added a call stack inside the IoC. By resolving a specific class you can see debug information regarding which feature has been called, the sequense of jobs and other useful data.
-+ Seperated and the Dashboard in to a third package independed of the console.
-+ Models are a concern of Laravel and not Vivid. Therefore you can only generate them using the laravel command.
-+ Services have been renamed to Devices.
-+ Validation was is again a responsibility of the framework.
+All Vivid packages will have the same minor version number.

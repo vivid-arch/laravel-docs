@@ -8,14 +8,11 @@ section: content
 # Operations
 
 Some times, certain jobs almost always need to run together. If, for example, you need to run an external api call before creating a resource,
-then that would force you to run 2 jobs every single time that you had to create that resource.
+then that would force you to run 2 Jobs every single time that you had to create that resource.
 
-If you were to follow this course of actions multiple times, it would make your code WET (Write Everything Twice).
-Keep also in mind that you should **NEVER** call a Job from within an other Job.
+Operations are used in order to DRY (Don't Repeat Yourself) up your code. 
 
-Operations are used in order to DRY (Dont Repeat Yourself) up your code. 
-
-Essentialy, Operations are a group of Jobs. Instead of calling the same Jobs
+Essentially, Operations are a group of Jobs. Instead of calling the same Jobs
 over and over again, you can group them together and then run that Operation instead. 
 
 ## Generating an Operation

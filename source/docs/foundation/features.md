@@ -23,8 +23,8 @@ In order to generate a Feature using the Vivid Console type the following comman
 ./vendor/bin/vivid make:feature <feature> [<device>]
 ```
 
-If you do not specify a Device name the feature will be considered a global and it will be placed inside the `/app/Features` directory.
-Otherwise the feature will belong to a Device and it will be placed inside the `/app/Devices/<device name>/Features` directory respectively.
+If you do not specify a Device name the feature will be considered a global, and it will be placed inside the `/app/Features` directory.
+Otherwise, the feature will belong to a Device, and it will be placed inside the `/app/Devices/<device name>/Features` directory respectively.
 
 ## Anatomy of the Feature
 
@@ -124,13 +124,13 @@ That's because Vivid doesn't care about the order of the arguments at all as lon
 
 Following the example that we introduced in the chapter about Devices, let see how we can determine which Features our application needs.
 
-The easiest to understand and most universal concept is the one of the support portal. Virtually all services that have the same functionality 
-when it comes to handling support ticker. Also, that doesn't make our example too specific. 
+The easiest to understand and most universal concept is the one of the support portal. Virtually all services have the same functionality 
+when it comes to handling support tickets. Also, that doesn't make our example too specific. 
 
 So, lets write down what we expect when think about a support portal. Definitely we need to be able to **create a new ticker**, **add media tou our ticker**,
 **add replies**, **mark it as closed**, and from the admin panel wou should have the ability to **assign the ticker**, **escalate it**, **updated the status**.
 
-Let't keep it simple for now and assume that these are all the things that we want to to when it comes to the support portal. 
+Let't keep it simple for now and assume that these are all the things that we want to do when it comes to the support portal. 
 
 That leaves us with the following Vivid Features:
 
@@ -140,3 +140,5 @@ That leaves us with the following Vivid Features:
 + MarkTicketAsClosedFeature
 + AssignTicketFeature
 + EscalateTicketFeature
+
+The next step is to use the console and generate these features. Once we have done that, we can move on and start writing our jobs.

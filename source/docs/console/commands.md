@@ -9,7 +9,7 @@ section: content
 # Commands
 
 ```text
-Vivid Console 0.1.0
+Vivid Console 0.5.2
 
 Usage:
   command [options] [arguments]
@@ -30,10 +30,11 @@ Available commands:
   list:devices                List the devices in this project.
   list:features               List the features.
  make
-  make:controller             Create a new resource Controller class in a device
+  make:controller             Create a new Controller class in a Device
   make:device                 Create a new Device
   make:feature                Create a new Feature in a device
   make:job {--Q|queue}        Create a new Job in a domain
   make:operation {--Q|queue}  Create a new Operation
   make:request                Create a Request in a specific device.
+
 ```

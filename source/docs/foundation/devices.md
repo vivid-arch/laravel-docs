@@ -7,12 +7,12 @@ section: content
 
 # Devices
 
-Think of a Device as a generic I/O device. It is responsible of either inputting data or outputting data for a given system.
+Think of a Device as a generic I/O device. It is responsible for either inputting data or outputting data for a given system.
 
 The structure of the Devices is similar to the default Laravel structure that we are used to seeing.
 Each one of them is responsible for providing an interface with our application. They have their own set of Controllers, Routes and Features.
 
-Each Device **must** be independent for the others and it should be able to function on its own without the existence of the other devices.
+Each Device **must** be independent of the others, and it should be able to function on its own without the existence of the other devices.
 
 It is of curse acceptable for Devices to use any component from our application that is located outside of the `/Devices` directory.
 
@@ -23,6 +23,8 @@ In order to generate a Device using the Vivid Console type the following command
 ```sh
 ./vendor/bin/vivid make:device ExampleDevice
 ```
+
+Some times, you may want to omit the creation of the resource folders inside `/resources/devices`. You may do that by appending the `--no-assets` option at the end of the command.
 
 ### Registering a Device
 

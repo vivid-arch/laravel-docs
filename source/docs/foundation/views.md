@@ -7,12 +7,12 @@ section: content
 
 # Views
 
-Following the isolation philosophy of the Devices with their own set of Routes, you can have views that belong to a specific Device.
+Following the isolation philosophy of the Devices with their own set of Routes, you may have views that belong to a specific Device.
 
 Each view is namespaced, and consequently has to be called using the name of the device as it's namespace.
 
 Example:
 
 ```php
-view('devicename::user.index')
+view('<device name>::user.index')
 ```

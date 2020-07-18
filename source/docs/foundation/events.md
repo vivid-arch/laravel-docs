@@ -14,6 +14,8 @@ inside the `Vivid\Foundation\JobDispatcherTrait` for the Jobs.
 
 Please keep in mind that in most cases, relying on events to add logic to your application can be considered an anti-pattern. Be cautious when using them.
 
+The recommended way to use the Events is for support actions that are not integral to the application.
+
 Classes:
 
 ### `Vivid\Foundation\Events\FeatureStarted`

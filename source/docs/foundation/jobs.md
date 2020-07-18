@@ -8,13 +8,15 @@ section: content
 # Jobs
 
 
-Jobs are where most of the magic happens. They are responsible for doing a certain task and they are reusable througout the application.
+Jobs are where most of the magic happens. They are responsible for doing a certain task and they are reusable throughout the application.
 
-Jobs should only be doing one and only thing. For example, a `FetchActiveUsersJob` should do what it's name implies. Similarly the Feature should be broken down to
-individual jobs. If you were to have a `SavePostFeature` you should think what smaller steps need to be taken in order to accomplish that task.
+Jobs should only be doing one and only thing. For example, a `FetchActiveUsersJob` should do what it's name implies. 
+Similarly, the Feature should be broken down to individual jobs. 
+If you were to have a `SavePostFeature` you should think what smaller steps need to be taken in order to accomplish that task.
 
-Unlike Features, Jobs are not Device-spicifc and they reside inside the `/app/Domains/<domain>/Jobs` directory. One important characteristic of the Jobs is that they are
-completely isolated and they should only ever talk to the core application or other external services. Most importantly, Jobs should never talk to other jobs.
+Unlike Features, Jobs are not Device-spicifc and they reside inside the `/app/Domains/<domain>/Jobs` directory. 
+One important characteristic of the Jobs is that they are completely isolated and they should only ever talk to the core application or other external services. 
+Most importantly, Jobs should never talk to other jobs.
 
 ## Generating a Job
 
@@ -58,13 +60,13 @@ class ExampleJob extends Job
 
 ```
 
-By default, the Job will conntain 2 functions, the `__construct` and the `handle` function. You will have to use the constructor in order to
-accept parameters to the Job, and the handle function to put inside the main Job logic.
+By default, the Job will contain 2 functions, the `construct` and the `handle` function. You will use the constructor in order to
+accept parameters, and the handle function to place inside the main Job logic.
 
 ## Running Jobs
 
-To run a job you have to use the `$this->run()` method from within a Feature, which is made available by the `Vivid\Foundation\JobDispatcherTrait` which, in turn,
-is implemented by the `Vivid\Foundation\Feature`.
+To run a job you will use the `$this->run()` method from within a Feature, which is made available by the `Vivid\Foundation\JobDispatcherTrait` which, in turn,
+is implemented by the `Vivid\Foundation\Feature` base class.
 
 Here is an example:
 
@@ -109,13 +111,16 @@ public function handle(Request $request)
 [...]
 ```
 
-In order to accept these parameters from the Job class you have to do the following:
+In order to accept these parameters from the Job class you will do the following:
 
 ```php
 [...]
 
 class ExampleJob extends Job
 {
+    private $param1;
+    private $param2;
+
     /**
      * Create a new job instance.
      *
@@ -123,7 +128,8 @@ class ExampleJob extends Job
      */
     public function __construct($param1, $param2)
     {
-
+        $this->param1 = $param1;
+        $this->param2 = $param2;
     }
 
     /**
@@ -133,7 +139,7 @@ class ExampleJob extends Job
      */
     public function handle()
     {
-    
+        // use the parameters from within here
     }
 }
 
@@ -141,3 +147,25 @@ class ExampleJob extends Job
 ```
 
 Please note that the order of the parameters does not matter here either. The key of the associative array however has to match the name of the parameter.
+
+## Returning data from Jobs
+
+In most cases you need to return whatever the result of the Job is. The `run()` method will return whatever `handle()` returns.
+
+Here is an example:
+
+**Feature:**
+```
+$data = $this->run(ExampleJob::class, [
+    'param1' => 'value',
+    'param2' => 'value'
+]);
+```
+
+**Job:**
+```php
+public function handle() {
+    // whatever $data is....
+    return $data;
+}
+```

@@ -20,27 +20,18 @@ for implementing the `ServesFeaturesTrait`.
 In order to generate a Controller using the Vivid Console, type the following command:
 
 ```sh
-./vendor/bin/vivid make:controller <controller> <device>
+./vendor/bin/vivid make:controller <controller> <device> [<resource>, <invokable>]
 ```
 
-By default this command will generate a basic controller class that looks like this:
+There are three different types of controllers that you can create through the `make:controller` command.
 
-```php
-<?php
+If you specify no options, a pain controller will be generated with no methods inside. 
 
-namespace App\Devices\ExampleDevice\Http\Controllers;
+You can append the `--resource` option to the `make` command and create a controller which will include the `index`, `create`, `store`, `show`, `edit`, `update`, `destroy` methods.
 
-use Illuminate\Http\Request;
-use Vivid\Foundation\Http\Controller;
+Lastly, you can use the `--invokable` option to generate a controller only with an `__invoke` method.
 
-class ExampleController extends Controller
-{
-
-}
-```
-
-If you want to save time and generate a resource controller you can do it by using the `--resource` option. This will generate a controller that implements
-the following functions: `index`, `create`, `store`, `show`, `edit`, `update`, `destroy`.
+-------------
 
 It is up to you to decide how your controller structure will be. When you aren't sure, we recommend watching the ["Cruddy by Design"](https://www.youtube.com/watch?v=MF0jFKvS4SI)
 talk by [Adam Wathan](https://adamwathan.me/). In summary, it is a good idea to avoid using any word for the name of a controller other than the 
