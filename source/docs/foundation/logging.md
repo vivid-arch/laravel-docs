@@ -7,7 +7,7 @@ section: content
 
 # Logging
 
-Vivid Jobs can write to logs by using the `$this-log()` method.
+Vivid Jobs can write to log by using the `$this->log()` method from anywhere within a Job.
 
 Under the hood Vivid uses the `Log` facade and prepends the output with the Job FQN
 but there are future plans to make the logging more powerful by allowing developers to

@@ -7,21 +7,21 @@ section: content
 
 # Jobs
 
+Jobs are where most of the magic happens. They are responsible for doing a certain task, and they are reusable throughout the application.
 
-Jobs are where most of the magic happens. They are responsible for doing a certain task and they are reusable throughout the application.
-
-Jobs should only be doing one and only thing. For example, a `FetchActiveUsersJob` should do what it's name implies. 
+Jobs should only be doing one and only thing. For example, a `FetchActiveUsersJob` should do exactly what the name implies. 
 Similarly, the Feature should be broken down to individual jobs. 
-If you were to have a `SavePostFeature` you should think what smaller steps need to be taken in order to accomplish that task.
+If you were to have a `SavePostFeature` you should think what smaller steps need to take place in order to accomplish that task.
 
-Unlike Features, Jobs are not Device-spicifc and they reside inside the `/app/Domains/<domain>/Jobs` directory. 
-One important characteristic of the Jobs is that they are completely isolated and they should only ever talk to the core application or other external services. 
+Unlike Features, Jobs are not Device-specific, and they reside inside the `/app/Domains/<domain>/Jobs` directory. 
+One important characteristic of the Jobs is that they are completely isolated, and they should only ever talk to the core application or other external services. 
 Most importantly, Jobs should never talk to other jobs.
 
 ## Generating a Job
 
 **Basic use**
 
+To generate a Job, use the following command:
 ```sh
 ./vendor/bin/vivid make:job <job> <domain>
 ```
@@ -60,13 +60,13 @@ class ExampleJob extends Job
 
 ```
 
-By default, the Job will contain 2 functions, the `construct` and the `handle` function. You will use the constructor in order to
-accept parameters, and the handle function to place inside the main Job logic.
+By default, the Job will contain 2 methods, the `__construct` and the `handle`. You will use the constructor in order to
+accept parameters, and the handle method to place inside the main Job logic. 
+If you wish you may add your own methods to clean up the `handle` method. 
 
 ## Running Jobs
 
-To run a job you will use the `$this->run()` method from within a Feature, which is made available by the `Vivid\Foundation\JobDispatcherTrait` which, in turn,
-is implemented by the `Vivid\Foundation\Feature` base class.
+To run a job you will use the `$this->run()` method from within a Feature, which is made available by the `Vivid\Foundation\JobDispatcherTrait`.
 
 Here is an example:
 
@@ -84,11 +84,16 @@ class ExampleFeature extends Feature
 {
     public function handle(Request $request)
     {
-        $this->run(ExampleJob::class);
+        return $this->run(ExampleJob::class);
     }
 }
 
 ```
+
+Some times you may wish you run a Job if a certain condition is met. Vivid provides 2 support methods which can help you with that.
+
++ `$this->runIf(boon $condition, string $job, array $args)`
++ `$this->runUnless(boon $condition, string $job, array $args)`
 
 ## Passing Parameters
 
@@ -143,14 +148,41 @@ class ExampleJob extends Job
     }
 }
 
-
 ```
+
+If you are running PHP8 you can use the Constructor Property Promotion in order to reduce the number of lines written. Given our
+previous example, it can be written as:
+
+```php
+class ExampleJob extends Job
+{
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct(private $param1, private $param2)
+    {}
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        // use the parameters from within here
+    }
+}
+```
+
+You can read more about Constructor Property Promotion in the [official RFP](https://wiki.php.net/rfc/constructor_promotion).
 
 Please note that the order of the parameters does not matter here either. The key of the associative array however has to match the name of the parameter.
 
 ## Returning data from Jobs
 
-In most cases you need to return whatever the result of the Job is. The `run()` method will return whatever `handle()` returns.
+In most cases you need to return whatever the result of the Job is. The `run` method will return whatever `handle` returns.
 
 Here is an example:
 

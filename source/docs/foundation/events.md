@@ -75,3 +75,7 @@ class JobStarted
     }
 }
 ```
+
+## Turning off event broadcast
+
+If you wish to disable the broadcast of events, you may set the `'broadcast_events'` config element to `false` inside the `config/vivid.php` file.

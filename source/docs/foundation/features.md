@@ -9,7 +9,7 @@ section: content
 
 As the name suggests, Features serve a specific purpose and only one Feature can be executed per request.
 
-Think of them as the intend of the request. For example a feature may be creating a post, authorizing a user, fetching a resource, etc...
+Think of them as the intent of the request. For example a feature may be creating a post, authorizing a user, fetching a resource, etc...
 
 Each Feature can only call Jobs and Operations and it should never communicate or invoke other Features.
 
@@ -53,7 +53,7 @@ All the magic happens inside the `handle()` method. This is where you will call 
 Now that you have created a Feature, how do you use it?
 
 As mentioned before, each Vivid Controller has access to the `Vivid\Foundation\ServesFeaturesTrait` which provides the `$this->serve()` method.
-This trait dispatches the execution of the Feature and it also registers the Feature class FQN to the `Vivid\Foundation\Instance` class.
+This trait dispatches the execution of the Feature, and it also registers the Feature class FQN to the `Vivid\Foundation\Instance` class.
 
 Here is an example using the Device Controller that serves a feature:
 
@@ -118,14 +118,14 @@ class RetrievesAllUsersFeature extends Feature
 ```
 
 You will notice that the order of the arguments doesn't match the order by which we passed them in. 
-That's because Vivid doesn't care about the order of the arguments at all as long as the names are the same.
+That's because Vivid does not care about the order of the arguments at all as long as the names are the same.
 
 ## Example of using a Feature
 
 Following the example that we introduced in the chapter about Devices, let see how we can determine which Features our application needs.
 
-The easiest to understand and most universal concept is the one of the support portal. Virtually all services have the same functionality 
-when it comes to handling support tickets. Also, that doesn't make our example too specific. 
+The easiest to understand, and most universal concept is the one of the support portal. Virtually all services have the same functionality 
+when it comes to handling support tickets. 
 
 So, lets write down what we expect when think about a support portal. Definitely we need to be able to **create a new ticker**, **add media tou our ticker**,
 **add replies**, **mark it as closed**, and from the admin panel wou should have the ability to **assign the ticker**, **escalate it**, **updated the status**.

@@ -16,3 +16,15 @@ Example:
 ```php
 view('<device name>::user.index')
 ```
+
+The directory structure would look like this:
+```
+/resources
+    /<device name>
+        /js
+        /lang
+        /sass
+        /views
+            /user
+                index.blade.php
+```

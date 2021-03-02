@@ -12,7 +12,7 @@ Domains are nothing more than way to logically group Jobs together based on whic
 For example, the Jobs `GetActiveUserJob`, `CreateUserJob`, `DestroyUserJob` belong to the `User` domain because they are dealing with the `User` entity.
 
 Furthermore, Domains will allow you to detect when your Jobs are doing too much work. If you can't decide in which Domain your Job belongs to,
-then most likely you are dealing with multiple Domains which in turn shows that your Job is doing too much work and it should be broken in to smaller parts.
+then most likely you are dealing with multiple Domains which in turn shows that your Job is doing too much work, and it should be broken in to smaller parts.
 
 ## Creating a Domain
 

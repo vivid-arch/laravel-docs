@@ -36,7 +36,7 @@ Your application may have multiple entry points acting like I/O Devices.
 
 + [vivid-arch/laravel-foundation](https://packagist.org/packages/vivid-arch/laravel-foundation)
 + [vivid-arch/laravel-console](https://packagist.org/packages/vivid-arch/laravel-console)
-+ [vivid-arch/laravel-ignition-tab](https://packagist.org/packages/vivid-arch/laravel-ignition-tab) (WIP)
++ [vivid-arch/laravel-ignition-tab](https://packagist.org/packages/vivid-arch/laravel-ignition-tab)
 + [vivid-arch/laravel-dashboard](/docs/dashboard/getting-started) (WIP)
 
 ## Copyright (MIT License)

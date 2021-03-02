@@ -23,7 +23,7 @@ over and over again, you can group them together and then run that Operation ins
 
 ## Anatomy of the Operation
 
-The Operation look like a Feature. It has a `handle()` method and it has the right to call Jobs.
+The Operation look like a Feature. It has a `handle` method and it has the right to call Jobs.
 
 ```php
 <?php
