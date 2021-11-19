@@ -21,11 +21,9 @@ Vivid requires you to publish the `vivid.php` config file in order to be able to
 
 # Compatibility
 
-Vivid has been tested only for Laravel 6.x but there is no reason that the Foundation package shouldn't be compatible with older versions of
-Laravel, or ever Lumen. More tests will be performed in the future in order to ensure that Vivid is fully functional, and determine the actually
-minimum compatible version of the framework.
+Vivid has been tested only for Laravel 8.x and PHP versions 7.4 and 8.x. It has not been tested with Laravel 7.x, but we would recommend upgrading to Laravel 8 for other reasons too.
 
 # Integration with existing projects
 
-Vivid is designed to play nicely with existing codebases. Once installed, it will not cause any conflicts in regards to the
+Vivid is designed to play nicely with existing code bases. Once installed, it will not cause any conflicts in regard to the
 classes and the routes.

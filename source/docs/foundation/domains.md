@@ -26,7 +26,7 @@ You can find the Domains at the `/app/Domains` directory.
 
 #Example use of Domains
 
-Let's follow the example that we set with the support portal. 
+Let's follow the example with the support portal. 
 
 We will assume that we have determined the following Jobs which will be needed for our application: 
 **FetchOpenTicketsForUserJob**, **FetchAssignedTicketsJob**, **AssignTicketJob**, **MarkTicketAsClosedJob**, **FetchTicketsForUserJob** etc...

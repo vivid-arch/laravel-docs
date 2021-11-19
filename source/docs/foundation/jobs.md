@@ -17,6 +17,8 @@ Unlike Features, Jobs are not Device-specific, and they reside inside the `/app/
 One important characteristic of the Jobs is that they are completely isolated, and they should only ever talk to the core application or other external services. 
 Most importantly, Jobs should never talk to other jobs.
 
+Furthermore, you should accept Job parameters in such a way which should allow Jobs to be executed in a non-HTTP context too.
+
 ## Generating a Job
 
 **Basic use**
@@ -90,7 +92,7 @@ class ExampleFeature extends Feature
 
 ```
 
-Some times you may wish you run a Job if a certain condition is met. Vivid provides 2 support methods which can help you with that.
+Sometimes you may wish you run a Job if a certain condition is met. Vivid provides 2 support methods which can help you with that.
 
 + `$this->runIf(boon $condition, string $job, array $args)`
 + `$this->runUnless(boon $condition, string $job, array $args)`
@@ -150,7 +152,7 @@ class ExampleJob extends Job
 
 ```
 
-If you are running PHP8 you can use the Constructor Property Promotion in order to reduce the number of lines written. Given our
+If you are running PHP8 you can use the [Constructor Property Promotion](https://stitcher.io/blog/constructor-promotion-in-php-8) in order to reduce the number of lines written. Given our
 previous example, it can be written as:
 
 ```php

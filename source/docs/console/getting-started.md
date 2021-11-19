@@ -9,4 +9,12 @@ section: content
 
 [![Latest Stable Version](https://poser.pugx.org/vivid-arch/laravel-console/v/stable)](https://packagist.org/packages/vivid-arch/laravel-console)
 
-The Vivid Console is reponsible for generating the components used by Vivid.
+The Vivid Console is responsible for generating the components used by Vivid.
+
+## Installation
+
+To install the Console package type the following command inside the root of your project:
+
+```
+composer require vivid-arch/laravel-console --dev
+```

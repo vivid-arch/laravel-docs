@@ -11,7 +11,7 @@ As the name suggests, Features serve a specific purpose and only one Feature can
 
 Think of them as the intent of the request. For example a feature may be creating a post, authorizing a user, fetching a resource, etc...
 
-Each Feature can only call Jobs and Operations and it should never communicate or invoke other Features.
+Each Feature can only call Jobs and Operations, and it should never communicate or invoke other Features.
 
 Keep in mind that Features are Device depended, however you can also have global features that are located inside the `/app/Features` directory.
 
@@ -130,7 +130,7 @@ when it comes to handling support tickets.
 So, lets write down what we expect when think about a support portal. Definitely we need to be able to **create a new ticker**, **add media tou our ticker**,
 **add replies**, **mark it as closed**, and from the admin panel wou should have the ability to **assign the ticker**, **escalate it**, **updated the status**.
 
-Let't keep it simple for now and assume that these are all the things that we want to do when it comes to the support portal. 
+Let's keep it simple for now and assume that these are all the things that we want to do when it comes to the support portal. 
 
 That leaves us with the following Vivid Features:
 

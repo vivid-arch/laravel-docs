@@ -7,7 +7,7 @@ section: content
 
 # Operations
 
-Some times, certain jobs almost always need to run together. If, for example, you need to run an external api call before creating a resource,
+Sometimes, certain jobs almost always need to run together. If, for example, you need to run an external api call before creating a resource,
 then that would force you to run 2 Jobs every single time that you had to create that resource.
 
 Operations are used in order to DRY (Don't Repeat Yourself) up your code. 

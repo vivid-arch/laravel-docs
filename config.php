@@ -3,9 +3,9 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'https://vivid-arch.github.io',
     'production' => false,
-    'siteName' => 'Laravel Vivid Architecture',
+    'siteName' => 'Laravel Vivid',
     'siteDescription' => 'Documentation for the Laravel implementation of the Vivid Architecture',
 
     // Algolia DocSearch credentials

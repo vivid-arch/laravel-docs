@@ -35,9 +35,9 @@ Lastly, you can use the `--invokable` option to generate a controller only with 
 
 You might feel tempted to use dependency injection and pass a resource instance to the Feature but this is not the correct way to do it.
 
-While you have to add the models as a parameter in the controller method, they will be automatically accessible by the request object.
+While you have to add the models as a parameter in the controller method, they will be accessible, automatically, by the request object.
 
-For example, this is considered a bad practise:
+For example, this is not required:
 
 ```php
 [...]
@@ -49,7 +49,7 @@ public function update(User $user) {
 [...]
 ```
 
-The recommended way is to not pass the array inside `serve` at all, but keep it in the method definition. From within the Feature,
+A better way would be to not pass the array inside `serve()` at all, but keep it in the method definition. From within the Feature,
 you can access the injected object using the Request object. 
 
 -------------

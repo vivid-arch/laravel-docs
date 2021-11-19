@@ -21,21 +21,17 @@ return [
     'Console' => [
         'url' => 'docs/console/getting-started',
         'children' => [
-            'Installation'  => 'docs/console/installation',
             'Commands'      => 'docs/console/commands'
         ],
     ],
-    'Dashboard' => [
+    /*'Dashboard' => [
         'url' => 'docs/dashboard/getting-started',
         'children' => [
             'Installation'  => 'docs/dashboard/installation'
         ],
-    ],
+    ],*/
     'Ignition Tab' => [
         'url' => 'docs/ignition/getting-started',
-        'children' => [
-            'Installation'  => 'docs/ignition/installation'
-        ],
     ],
     'CHANGELOG' => [
         'url' => 'docs/changelog'

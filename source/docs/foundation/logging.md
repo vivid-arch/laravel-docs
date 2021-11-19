@@ -25,3 +25,10 @@ From within a job you can use the following methods:
 + `$this->log()->critical(string $message)`
 + `$this->log()->alert(string $message)`
 + `$this->log()->emergency(string $message)`
+
+## Sending Vivid to a custom channel
+
+You have the ability to also use a dedicated channel for Vivid.
+Inside the `config/vivid.php` file you may set the `'log_channel'` value to whatever you like.
+
+Keep in mind that this will only work if you use the Vivid log helper (`$this->log()->`)
