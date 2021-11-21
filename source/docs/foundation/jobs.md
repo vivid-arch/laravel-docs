@@ -203,3 +203,25 @@ public function handle() {
     return $data;
 }
 ```
+
+## Cacheable Jobs
+
+It is also possible to implement automatic caching for Job. Basically, the Vivid job dispatcher
+will take the result of the Job and add it to the default caching driver. 
+
+To make a Job cacheable, you need to implement the following interface: `Vivid\Foundation\Contracts\Cacheable`.
+
+This interface is responsible for requesting 2 essential pieces of information: What the key is & how long to cache.
+
+```php
+public function getCacheKey(): string;
+
+public function getCacheExpiration(): int;
+```
+
+For convenience, Vivid includes a trait out of the box which can use a set of default values 
+in order to provide a definition for the `getCacheKey` and `getCacheExpiration` methods.
+Simply use the `Vivid\Foundation\Contracts\Cacheable` trait. 
+
+The `getCacheKey` method will return the class FQN of the Job and the `getCacheExpiration` will
+return the value of `default_cache_duration` which is located in `config/vivid.php`.

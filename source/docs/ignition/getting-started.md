@@ -16,4 +16,4 @@ and it provides useful information when the application crashes.
 composer require vivid-arch/laravel-ignition-tab
 ```
 
-![ignition](/assets/images/ignition.png)
+![ignition](/assets/images/Ignition.png)
